@@ -1,6 +1,7 @@
 import './global.css'
 import { Header } from './components/header'
 import { NewTask } from './components/newTask'
+import { Tasks } from './components/tasks'
  export function App() {
   
   return (
@@ -14,9 +15,7 @@ import { NewTask } from './components/newTask'
         </aside>
             
         <main>
-          <div>
-            <p>tarefas criadas</p>
-          </div> // outro componente que iremos criar
+          <Tasks />
         </main>
       
       </div>
