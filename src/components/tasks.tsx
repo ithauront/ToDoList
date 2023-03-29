@@ -1,6 +1,6 @@
 import styles from './tasks.module.css'
 import Clipboard from '../assets/Clipboard.png'
-import { TrashSimple } from 'phosphor-react'
+import { Trash} from 'phosphor-react'
 
 export function Tasks(){
     return(
@@ -24,8 +24,8 @@ export function Tasks(){
 
             <div className={styles.list}>
                 <input className={styles.checkbox} type="checkbox" />
-                <p>fazer a to-do list</p>
-                <button type='submit'><TrashSimple /></button>
+                <p className={styles.text}>fazer a to-do list</p>
+                <button className={styles.trashButton} type='submit'><Trash size={24} /></button>
             </div>
 
         </aside>

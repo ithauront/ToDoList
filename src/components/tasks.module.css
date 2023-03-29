@@ -62,6 +62,11 @@
 }
 
 .list {
+    position: absolute;
+    top:  calc(1.187rem + 1.5rem);
+    left: 50%;
+    transform: translate(-50%);
+
     width: 46rem;
     height: 4.5rem;
     padding: 1rem;
@@ -74,6 +79,7 @@
     justify-content: space-between;
     align-items: center;
     
+    color: var(--gray-100);
 }
 
 .checkbox {
@@ -84,6 +90,7 @@
     appearance: none;
     cursor: pointer;
     background-color: transparent;
+    transition: 0.1s;
   }
 
   .checkbox:hover{
@@ -108,3 +115,25 @@
 
   }
   
+  .trashButton {
+    background: transparent;
+    border: 0;
+    border-radius: 20%;
+    color: var(--gray-300);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: 0.1s;
+
+} 
+
+.trashButton:hover {
+    background: var(--gray-400);
+    color: var(--danger);
+    
+}
+
+.checkbox:checked ~ .text {
+    color: var(--gray-300);
+    text-decoration: line-through;
+}
