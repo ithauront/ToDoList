@@ -4,9 +4,9 @@ vamos fazer um aplicativo de lista nele vamos ter uma unica tela com a seguites 
 - um header com o nome da lista V
 - um text area para digitarmos a tarefa V
 - um botão para a criação da tarefa V
-- um "navegador" com a quantidade de tarefa criada e a quantidade de tarefa feitas.
+- um "navegador" com a quantidade de tarefa criada e a quantidade de tarefa feitas. V
 - uma area com duas opões
-    1 caso não tenha nenhuma tarefa vamos mostrar um aviso de não tem tarefa
+    1 caso não tenha nenhuma tarefa vamos mostrar um aviso de não tem tarefa V
     2 a partira da primeira tarefa vamos nessa area listar as tarefas a fazer com a possibilidade de marcar elas como feitas e tambem com uma lixeira para apagar.
 * funcionalidade
 - text area e butão de input que ira colocar em tela o componente da tarefa (adicionar ao array task)
