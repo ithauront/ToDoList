@@ -1,6 +1,6 @@
 import './global.css'
 import { Header } from './components/header'
-import { Tasks } from './components/tasks'
+import { TaskList } from './components/taskList'
  export function App() {
   
 
@@ -11,9 +11,9 @@ import { Tasks } from './components/tasks'
 
       <div > 
                  
-        <main>
-          <Tasks />
-        </main>
+        
+          <TaskList />
+        
       
       </div>
     </div>

@@ -1,4 +1,4 @@
-import styles from './tasks.module.css'
+import styles from './taskList.module.css'
 import Clipboard from '../assets/Clipboard.png'
 import { PlusCircle , Trash} from 'phosphor-react'
 
@@ -8,7 +8,7 @@ import { useState, FormEvent, ChangeEvent} from 'react';
 
 
 
-export function Tasks(){
+export function TaskList(){
 
     const [tasks, setTasks] = useState<string[]>([]);
     const [newTaskText, setNewTaskText] = useState('');
@@ -51,28 +51,31 @@ export function Tasks(){
             </div> 
        
         </main>
-        <footer className={tasks.length===0 ? styles.empty : ''}>
-                
-                {tasks.length === 0 ? (
-                    <>
-                        <img className={styles.clipboard} src={Clipboard} alt="Clipboard" />
-                        <p><strong>Voce Ainda não tem tarefas cadastradas</strong></p>            
-                        <p>Crie tarefas e organize seus itens a fazer</p>
-                    </>
-                )  :  (
-                    <ul className={styles.list}>
-                        {tasks.map((task, index) => (
-                            <li key={index}>
-                                <div className={styles.list}>
-                                    <input className={styles.checkbox} type="checkbox" />
-                                    <p className={styles.text}>{task}</p>
-                                    <button className={styles.trashButton} type='submit'><Trash size={24} /></button>
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
-                )}
-        </footer>
+        <footer className={tasks.length === 0 ? styles.empty : ''}>
+  {tasks.length === 0 ? (
+    <>
+      <img className={styles.clipboard} src={Clipboard} alt="Clipboard" />
+      <p><strong>Voce Ainda não tem tarefas cadastradas</strong></p>            
+      <p>Crie tarefas e organize seus itens a fazer</p>
+    </>
+  ) : (
+    <>
+      
+        {tasks.map((task, index) => (
+            <ul>
+          <li className={styles.list} key={index}>
+            <input className={styles.checkbox} type="checkbox" />
+            <p className={styles.text}>{task}</p>
+            <button className={styles.trashButton} type='submit'><Trash size={24} /></button>
+          </li>
+          </ul>
+        ))}
+      
+    </>
+  )}
+</footer>
+
+
         
         
         </div>
