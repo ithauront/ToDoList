@@ -52,13 +52,18 @@
         cursor: pointer;
     }
 
+
+
 .tasksListWrapper {
     position: relative;
     
     top: 3.375rem;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.taskCreated {
+.tasksCreated {
     width: 46rem;
     height: 1.187rem;
     padding: 0;
@@ -72,6 +77,7 @@
 .header div {
     display: flex;
 }
+
 
 .created {
     color: var(--blue);
@@ -112,11 +118,11 @@
 }
  
 
-.list {
-    position: absolute;
-    top:  calc(1.187rem + 10rem);
+
+.taskOnTheList {
+    
+   margin-top:  calc(1.187rem + 3rem);
     left: 50%;
-    transform: translate(-50%);
 
     width: 46rem;
     height: 4.5rem;
@@ -133,8 +139,8 @@
     color: var(--gray-100);
 }
 
-.list + .list {
-    margin-top: calc(4.5rem + 0.75rem)
+.taskOnTheList + .taskOnTheList {
+    margin-top: 0.75rem 
 }
 
 .checkbox {

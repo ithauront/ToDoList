@@ -41,8 +41,9 @@ export function TaskList(){
                 </footer>
         </form>
         </header>
+
         <div className={styles.tasksListWrapper}>
-        <main className={styles.taskCreated}>
+        <main className={styles.tasksCreated}>
           <div className={styles.created}>
                  <p>Tarefas Criadas</p> <span>{tasks.length}</span>
             </div>
@@ -51,6 +52,7 @@ export function TaskList(){
             </div> 
        
         </main>
+        
         <footer className={tasks.length === 0 ? styles.empty : ''}>
   {tasks.length === 0 ? (
     <>
@@ -62,13 +64,13 @@ export function TaskList(){
     <>
       
         {tasks.map((task, index) => (
-            <ul>
-          <li className={styles.list} key={index}>
+            
+          <div className={styles.taskOnTheList} key={index}>
             <input className={styles.checkbox} type="checkbox" />
             <p className={styles.text}>{task}</p>
             <button className={styles.trashButton} type='submit'><Trash size={24} /></button>
-          </li>
-          </ul>
+          </div>
+          
         ))}
       
     </>
