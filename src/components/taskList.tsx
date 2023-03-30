@@ -13,6 +13,8 @@ export function TaskList(){
     const [tasks, setTasks] = useState<string[]>([]);
     const [newTaskText, setNewTaskText] = useState('');
 
+
+
     function addTask(newTask: string) {
      return setTasks([...tasks, newTask]);
     }
@@ -30,6 +32,15 @@ export function TaskList(){
         setNewTaskText(event.target.value);
      }
          
+    const deleteTask = (index:number) => {
+        const taskWithoutDeletedOne = [...tasks];
+        taskWithoutDeletedOne.splice(index, 1);
+        setTasks(taskWithoutDeletedOne)
+
+    }
+
+    
+
     return(
         <div>
         <header >
@@ -68,7 +79,7 @@ export function TaskList(){
           <div className={styles.taskOnTheList} key={index}>
             <input className={styles.checkbox} type="checkbox" />
             <p className={styles.text}>{task}</p>
-            <button className={styles.trashButton} type='submit'><Trash size={24} /></button>
+            <button className={styles.trashButton} onClick={() => deleteTask(index)} title='deleteTask'><Trash size={24} /></button>
           </div>
           
         ))}
