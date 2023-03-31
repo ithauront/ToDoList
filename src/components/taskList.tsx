@@ -5,18 +5,22 @@ import { PlusCircle , Trash} from 'phosphor-react'
 import { useState, FormEvent, ChangeEvent} from 'react';
 
 
+interface Task {
+    text: string;
+    checked: boolean;
 
+}
 
 
 export function TaskList(){
 
-    const [tasks, setTasks] = useState<string[]>([]);
+    const [tasks, setTasks] = useState<Task[]>([]);
     const [newTaskText, setNewTaskText] = useState('');
 
 
 
     function addTask(newTask: string) {
-     return setTasks([...tasks, newTask]);
+     return setTasks([...tasks, {text: newTask, checked: false}]);
     }
 
     function handleCreateNewTask(event: FormEvent){
@@ -38,6 +42,14 @@ export function TaskList(){
         setTasks(taskWithoutDeletedOne)
 
     }
+
+    const handletaskChecked= (index:number) => {
+        const taskWithoutCheckedOne = [...tasks];
+        const checkedTask = taskWithoutCheckedOne.splice(index, 1)[0];
+        checkedTask.checked = !checkedTask.checked;
+        const taskCheckedAtTheBottom = [...taskWithoutCheckedOne, checkedTask]
+        setTasks(taskCheckedAtTheBottom);
+            }
 
     
 
@@ -77,8 +89,8 @@ export function TaskList(){
         {tasks.map((task, index) => (
             
           <div className={styles.taskOnTheList} key={index}>
-            <input className={styles.checkbox} type="checkbox" />
-            <p className={styles.text}>{task}</p>
+            <input className={styles.checkbox} type="checkbox" onChange={() => handletaskChecked(index)} checked={task.checked}/>
+            <p className={styles.text}>{task.text}</p>
             <button className={styles.trashButton} onClick={() => deleteTask(index)} title='deleteTask'><Trash size={24} /></button>
           </div>
           
