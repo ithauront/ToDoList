@@ -78,6 +78,14 @@
     display: flex;
 }
 
+.counter{
+width: 5rem;
+height: 5rem;
+border-radius: 999px;
+background: var(--gray-400);
+color: var(--gray-200);
+padding: 8 ;
+}
 
 .created {
     color: var(--blue);

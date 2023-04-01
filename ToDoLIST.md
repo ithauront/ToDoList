@@ -18,9 +18,11 @@ vamos fazer um aplicativo de lista nele vamos ter uma unica tela com a seguites 
 - o componente das task vao ser criados pelo botão e vao ter conter o texto que foi digitado na text area vamos usar o event target value. alem disso temos que adicionar o botão da lixeira a todos os componentes com a função de deletar e o botão de tarefacompleta com a função de adicionar um a contagem de tarefas competadas. V
 - quando a terefa for completa tambem o texto vai ter que se tornar barrado e o componene ficar opaco. V
 - adicionar a funcionalidade do botão de deletar o comentario V
+- colocar uma funcionalidade para a tarefa checkada ser movida para o baixo da lista. V
+-estilizar os contadores
 
-- fazer o contador de tarefas concluidas e estilizar ambos contadores.
-- colocar uma funcionalidade para a tarefa checkada ser movida para o baixo da lista.
+(opcional)
+- fazer com que a tarefa mais antiga fique no fim da lista e não no topo.
 - se quiser no fim separar os componentes.
 
 
