@@ -19,12 +19,8 @@ vamos fazer um aplicativo de lista nele vamos ter uma unica tela com a seguites 
 - quando a terefa for completa tambem o texto vai ter que se tornar barrado e o componene ficar opaco. V
 - adicionar a funcionalidade do botão de deletar o comentario V
 - colocar uma funcionalidade para a tarefa checkada ser movida para o baixo da lista. V
--estilizar os contadores
-
+-estilizar os contadores v
+- se quiser no fim separar os componentes. V
 (opcional)
 - fazer com que a tarefa mais antiga fique no fim da lista e não no topo.
-- se quiser no fim separar os componentes.
 
-
-## Execução
-vamos começar fazendo o basicão podemos fazer logoo header no components 

@@ -22,14 +22,20 @@
 
       }
 
+      
+
       const handletaskChecked= (index:number) => {
-          const taskWithoutCheckedOne = [...tasks];
-          const checkedTask = taskWithoutCheckedOne.splice(index, 1)[0];
-          checkedTask.checked = !checkedTask.checked;
-          const taskCheckedAtTheBottom = [...taskWithoutCheckedOne, checkedTask]
-          setTasks(taskCheckedAtTheBottom);
-              }
-            
+        const taskWithoutCheckedOne = [...tasks];
+        const checkedTask = taskWithoutCheckedOne.splice(index, 1)[0];
+        checkedTask.checked = !checkedTask.checked;
+        if (!checkedTask.checked) {
+          taskWithoutCheckedOne.unshift(checkedTask)
+        }
+        else {taskWithoutCheckedOne.push(checkedTask)}
+        
+        setTasks(taskWithoutCheckedOne);
+            }
+
       const completedTask = tasks.filter(task => task.checked === true); 
 
       return(
@@ -60,7 +66,7 @@
           {tasks.map((task, index) => (
               
             <div className={styles.taskOnTheList} key={index}>
-              <input className={styles.checkbox} type="checkbox" onChange={() => handletaskChecked(index)} checked={task.checked}/>
+              <input className={`${styles.checkbox}`} type="checkbox" onChange={() => handletaskChecked(index)} checked={task.checked}/>
               <p className={styles.text}>{task.text}</p>
               <button className={styles.trashButton} onClick={() => deleteTask(index)} title='deleteTask'><Trash size={24} /></button>
             </div>
