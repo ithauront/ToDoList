@@ -2,7 +2,7 @@
   import Clipboard from '../assets/Clipboard.png'
   import { PlusCircle , Trash} from 'phosphor-react'
 
-  import { useState, FormEvent, ChangeEvent} from 'react';
+  import { useState, FormEvent, ChangeEvent, useEffect} from 'react';
 
 
   interface Task {
@@ -16,11 +16,12 @@
 
       const [tasks, setTasks] = useState<Task[]>([]);
       const [newTaskText, setNewTaskText] = useState('');
+      const [count, setCount] = useState<number>(0);
 
-
-
+  
       function addTask(newTask: string) {
       return setTasks([ {text: newTask, checked: false}, ...tasks]);
+      
       }
 
       function handleCreateNewTask(event: FormEvent){
@@ -51,7 +52,7 @@
           setTasks(taskCheckedAtTheBottom);
               }
             
-      const completedTask = tasks.filter(task => task.checked === true)
+      const completedTask = tasks.filter(task => task.checked === true); 
 
       return(
           <div>
@@ -71,7 +72,7 @@
                   <p>Tarefas Criadas</p> <span className={styles.counter}>{tasks.length}</span>
               </div>
               <div className={styles.done}>
-                  <p>Concluidas</p></div> <span className={styles.counter}>{completedTask.length}</span>
+                  <p>Concluidas</p> <span className={styles.counter}>{completedTask.length}</span></div>
               
         
           </main>

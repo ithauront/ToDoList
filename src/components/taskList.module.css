@@ -68,31 +68,37 @@
     height: 1.187rem;
     padding: 0;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 25%);
-   
-}
-.header div {
-    display: flex;
+      
 }
 
+
 .counter{
-width: 5rem;
-height: 5rem;
+    margin-left: 0.5rem;
+width: 1.5625rem;
+height: 1.1875rem;
 border-radius: 999px;
 background: var(--gray-400);
 color: var(--gray-200);
-padding: 8 ;
+padding: 0.625rem 0.5rem ;
+display: flex;
+align-items: center;
+justify-content: center;
+
+
 }
 
 .created {
     color: var(--blue);
+    display: flex;
+
 }
 
 .done {
    color: var(--purple);
+   display: flex;
+  
 }
 .empty {
     position: absolute;
