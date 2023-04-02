@@ -1,9 +1,6 @@
   import styles from './taskList.module.css'
   import Clipboard from '../assets/Clipboard.png'
-  import { PlusCircle , Trash} from 'phosphor-react'
-
-  import { useState, FormEvent, ChangeEvent, useEffect} from 'react';
-
+  import { Trash} from 'phosphor-react'
 
   interface Task {
       text: string;
@@ -11,31 +8,12 @@
 
   }
 
+  interface TaskListProps{
+    tasks: Task[];
+    setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
+  }
 
-  export function TaskList(){
-
-      const [tasks, setTasks] = useState<Task[]>([]);
-      const [newTaskText, setNewTaskText] = useState('');
-      const [count, setCount] = useState<number>(0);
-
-  
-      function addTask(newTask: string) {
-      return setTasks([ {text: newTask, checked: false}, ...tasks]);
-      
-      }
-
-      function handleCreateNewTask(event: FormEvent){
-          event.preventDefault()
-          if (newTaskText.trim() !== '') {
-        addTask(newTaskText);
-        setNewTaskText('')
-      }
-      }
-
-      function handleNewTaskChange(event: ChangeEvent<HTMLTextAreaElement>){
-          event.target.setCustomValidity('');
-          setNewTaskText(event.target.value);
-      }
+  export function TaskList({tasks, setTasks}: TaskListProps){  
           
       const deleteTask = (index:number) => {
           const taskWithoutDeletedOne = [...tasks];
@@ -56,15 +34,7 @@
 
       return(
           <div>
-          <header >
-          <form onSubmit={handleCreateNewTask} className={styles.form}>
-                  <textarea name="task"  placeholder="Adicione uma nova tarefa" value={newTaskText} 
-                  onChange={handleNewTaskChange}/>
-                  <footer>
-                      <button type="submit"><span className={styles.buttonText}>Criar</span>< PlusCircle size={18}/></button>
-                  </footer>
-          </form>
-          </header>
+          
 
           <div className={styles.tasksListWrapper}>
           <main className={styles.tasksCreated}>
