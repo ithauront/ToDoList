@@ -25,15 +25,15 @@
       
 
       const handletaskChecked= (index:number) => {
-        const taskWithoutCheckedOne = [...tasks];
-        const checkedTask = taskWithoutCheckedOne.splice(index, 1)[0];
+        const updatedTaskList = [...tasks];
+        const checkedTask = updatedTaskList.splice(index, 1)[0];
         checkedTask.checked = !checkedTask.checked;
         if (!checkedTask.checked) {
-          taskWithoutCheckedOne.unshift(checkedTask)
+          updatedTaskList.unshift(checkedTask)
         }
-        else {taskWithoutCheckedOne.push(checkedTask)}
+        else {updatedTaskList.push(checkedTask)}
         
-        setTasks(taskWithoutCheckedOne);
+        setTasks(updatedTaskList);
             }
 
       const completedTask = tasks.filter(task => task.checked === true); 
