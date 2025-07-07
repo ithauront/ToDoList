@@ -9,7 +9,7 @@ The project focuses on working with React state management, component structure,
 
 [![View on GitHub Pages](https://img.shields.io/badge/Live%20Preview-Click%20Here-blue?style=for-the-badge)](https://ithauront.github.io/ToDoList/)
 
-Or access directly: [https://ithauront.github.io/social-feed/](https://ithauront.github.io/ToDoList/)
+Or access directly: [https://ithauront.github.io/ToDoList/](https://ithauront.github.io/ToDoList/)
 
 ---
 
