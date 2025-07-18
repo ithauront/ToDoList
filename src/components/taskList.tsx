@@ -53,7 +53,7 @@
         
           </main>
           
-          <footer className={tasks.length === 0 ? styles.empty : ''}>
+          <footer className={tasks.length === 0 ? styles.empty : styles.listOfTasks}>
     {tasks.length === 0 ? (
       <>
         <img className={styles.clipboard} src={Clipboard} alt="Clipboard" />

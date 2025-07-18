@@ -1,10 +1,10 @@
 .tasksListWrapper {
     position: relative;
-    
+
     top: 3.375rem;
     display: flex;
-  flex-direction: column;
-  align-items: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .tasksCreated {
@@ -14,21 +14,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-      
+
 }
 
 
-.counter{
+.counter {
     margin-left: 0.5rem;
-width: 1.5625rem;
-height: 1.1875rem;
-border-radius: 999px;
-background: var(--gray-400);
-color: var(--gray-200);
-padding: 0.625rem 0.5rem ;
-display: flex;
-align-items: center;
-justify-content: center;
+    width: 1.5625rem;
+    height: 1.1875rem;
+    border-radius: 999px;
+    background: var(--gray-400);
+    color: var(--gray-200);
+    padding: 0.625rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 
 }
@@ -40,16 +40,17 @@ justify-content: center;
 }
 
 .done {
-   color: var(--purple);
-   display: flex;
-  
+    color: var(--purple);
+    display: flex;
+
 }
+
 .empty {
     position: absolute;
-    top:  calc(1.187rem + 1.5rem);
+    top: calc(1.187rem + 1.5rem);
     left: 50%;
     transform: translate(-50%);
-    
+
     width: 46rem;
     height: 15.25rem;
     color: var(--gray-300);
@@ -62,43 +63,43 @@ justify-content: center;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
-   }
+
+}
 
 .clipboard {
     height: 3.5rem;
     width: 3.5rem;
-   
+
 }
 
 .empty p strong {
     font-weight: 700;
 }
- 
+
 
 
 .taskOnTheList {
-    
-   margin-top:  calc(1.187rem + 3rem);
+
+    margin-top: calc(1.187rem + 3rem);
     left: 50%;
 
     width: 46rem;
-    height: 4.5rem;
+    min-height: 4.5rem;
     padding: 1rem;
     border-radius: 8px;
-    
+
     background: var(--gray-500);
     border: 1px solid var(--gray-400);
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
     color: var(--gray-100);
 }
 
-.taskOnTheList + .taskOnTheList {
-    margin-top: 0.75rem 
+.taskOnTheList+.taskOnTheList {
+    margin-top: 0.75rem
 }
 
 .checkbox {
@@ -110,31 +111,31 @@ justify-content: center;
     cursor: pointer;
     background-color: transparent;
     transition: 0.1s;
-  }
+}
 
-  .checkbox:hover{
+.checkbox:hover {
     border: 2px solid var(--blue-dark);
-  }
+}
 
-  .checkbox:checked {
+.checkbox:checked {
     background-color: var(--purple-dark);
     border: 2px solid var(--purple-dark);
-  }
+}
 
-  .checkbox:checked::after {
-        content: "\2713";
-        color: var(--gray-100);
-        display: inline-block;
-        margin-left: 5px;
-  }
-  
-  .checkbox:checked:hover {
+.checkbox:checked::after {
+    content: "\2713";
+    color: var(--gray-100);
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.checkbox:checked:hover {
     background-color: var(--purple);
     border: 2px solid var(--purple);
 
-  }
-  
-  .trashButton {
+}
+
+.trashButton {
     background: transparent;
     border: 0;
     border-radius: 20%;
@@ -144,18 +145,52 @@ justify-content: center;
     align-items: center;
     transition: 0.1s;
 
-} 
+}
 
 .trashButton:hover {
     background: var(--gray-400);
     color: var(--danger);
-    
+
 }
 
-.checkbox:checked ~ .text {
+.checkbox:checked~.text {
     color: var(--gray-300);
     text-decoration: line-through;
 }
 
 
-  
+@media (max-width: 768px) {
+    .tasksListWrapper {
+        width: 100vw;
+    }
+
+    .tasksCreated {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 3rem 1rem;
+    }
+
+    .listOfTasks {
+        flex: 1;
+        width: 100vw;
+
+        padding: 0 1rem;
+    }
+
+    .taskOnTheList {
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .text {
+        flex: 1;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        max-width: 80%;
+        text-align: center;
+    }
+}

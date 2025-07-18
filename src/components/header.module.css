@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-   
+
 }
 
 .title img {
@@ -21,18 +21,24 @@
 }
 
 .title strong {
- padding: 0.8rem;
- height: 5.75rem;
- width: 4rem;
- font-weight: bold;
- font-size: 2.5rem;
+    padding: 0.8rem;
+    height: 5.75rem;
+    width: 4rem;
+    font-weight: bold;
+    font-size: 2.5rem;
 }
 
 .blue {
     color: var(--blue)
-
 }
 
 .purple {
     color: var(--purple-dark);
+}
+
+@media (max-width: 768px) {
+    .header {
+        width: 100vw;
+        margin-bottom: 1rem;
+    }
 }
